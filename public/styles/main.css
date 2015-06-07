@@ -1,18 +1,242 @@
-@import "fonts.css";
+ul, p, h1 {
+  padding: 0;
+  margin: 0; }
+
+a {
+  color: inherit;
+  text-decoration: none; }
+
+li {
+  list-style-type: none; }
+
+@font-face {
+  font-family: 'HUGEAvantGardeBold';
+  src: url("/fonts/huge_agb_v5-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/huge_agb_v5-webfont.woff") format("woff"), url("/fonts/huge_agb_v5-webfont.ttf") format("truetype"), url("/fonts/huge_agb_v5-webfont.svg#svgFontName") format("svg"); }
+
+@font-face {
+  font-family: 'Galaxie';
+  font-style: normal;
+  font-weight: normal;
+  src: url("/fonts/GalaxieCopernicus-Book.eot?#iefix") format("embedded-opentype"), url("/fonts/GalaxieCopernicus-Book.woff") format("woff"), url("/fonts/GalaxieCopernicus-Book.svg#svgFontName") format("svg"); }
+
+@font-face {
+  font-family: 'Galaxie';
+  font-style: italic;
+  font-weight: normal;
+  src: url("/fonts/GalaxieCopernicus-BookItalic.eot?#iefix") format("embedded-opentype"), url("/fonts/GalaxieCopernicus-BookItalic.woff") format("woff"), url("/fonts/GalaxieCopernicus-BookItalic.svg#svgFontName") format("svg"); }
+
+#logo {
+  display: inline-block; }
+
+nav {
+  background-color: #ec008c;
+  color: white;
+  z-index: 3000;
+  position: relative; }
+
+#menu {
+  position: absolute;
+  margin: 0; }
+
+.primer-menu-item {
+  font: 21px/48px HUGEAvantGardeBold; }
+  .primer-menu-item.open .sec-menu {
+    display: block; }
+
+.sec-menu-item {
+  font: 16px/48px Galaxie; }
+  .sec-menu-item a:hover {
+    background-color: #eee;
+    color: #ec008c; }
+
+.primer-menu-item a, .sec-menu-item a {
+  display: block;
+  height: 100%; }
+
+.sec-menu {
+  display: none; }
+
+@media (max-width: 767px) {
+  nav {
+    height: 60px; }
+  #overlap-nav, #access-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 60px;
+    width: 100%; }
+  #overlap-nav {
+    background-color: #ec008c;
+    z-index: 2000; }
+  #access-nav {
+    background-color: transparent;
+    z-index: 3000;
+    transition: left 0.3s;
+    -webkit-transition: left 0.3s; }
+  #ext-nav {
+    position: absolute;
+    width: 100%;
+    height: 100%; }
+  #nav-toggle {
+    background: center center url("/images/toggle-open.svg");
+    width: 24px;
+    height: 20px;
+    padding: 20px 24px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 3000; }
+  #logo {
+    background: center center no-repeat url("/images/HUGE-white-small-mb.png");
+    width: 50px;
+    height: 20px;
+    padding: 20px 24px;
+    z-index: 3000;
+    position: relative; }
+  #menu {
+    right: 72px;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    min-height: 336px;
+    z-index: 1000;
+    color: black;
+    transition: right 0.3s;
+    -webkit-transition: right 0.3s;
+    background-color: white; }
+  .primer-menu-item {
+    padding-left: 72px;
+    position: relative; }
+    .primer-menu-item.open .chevron {
+      -webkit-transform: rotate(180deg); }
+  .sec-menu-item a, .primer-menu-item a {
+    padding-left: 24px; }
+    .sec-menu-item a:hover, .primer-menu-item a:hover {
+      background-color: #eee;
+      color: #ec008c; }
+  .primer-menu {
+    margin-top: 60px; }
+  .chevron {
+    background: center center url(/images/chevron.png);
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    right: 0;
+    top: 0; }
+  #copyright {
+    position: absolute;
+    bottom: 0;
+    font: normal 12px/16px "Helvetica Neue", Helvetica, sans-serif;
+    left: 72px;
+    padding: 16px 0 16px 24px; } }
+
+@media (min-width: 768px) {
+  #ext-nav {
+    background-color: #ec008c;
+    color: white;
+    height: 72px; }
+  #logo {
+    background: center center no-repeat url("/images/HUGE-white-small.png");
+    width: 60px;
+    height: 24px;
+    padding: 24px; }
+  .headImg {
+    height: 640px; }
+  .heading {
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: white;
+    width: 100%; }
+  #copyright {
+    display: none; }
+  #menu {
+    left: 132px;
+    top: 0;
+    background-color: transparent;
+    color: white; }
+  .primer-menu-item {
+    display: inline-block;
+    margin-right: -4px; }
+    .primer-menu-item > a {
+      padding: 12px 24px;
+      display: inline-block; }
+      .primer-menu-item > a:hover {
+        background-color: white;
+        color: #ec008c; }
+    .primer-menu-item.open {
+      background-color: white;
+      color: #ec008c; }
+      .primer-menu-item.open .sec-menu {
+        position: absolute;
+        background-color: inherit;
+        color: black; }
+  .sec-menu-item {
+    display: block; }
+    .sec-menu-item > a {
+      padding: 0 24px;
+      display: block; } }
+
+#main {
+  position: relative;
+  z-index: 1000;
+  left: 0; }
+
+#mask {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 3000; }
+
+.content {
+  color: black;
+  text-align: justify; }
+
+.headImg {
+  width: 100%; }
+
+@media (max-width: 767px) {
+  .content {
+    font: 14px/24px Galaxie;
+    padding: 0 24px 50px; }
+  .heading {
+    font: 44px/48px HUGEAvantGardeBold;
+    margin: 50px 24px;
+    text-align: left; }
+  #main {
+    transition: left 0.3s;
+    -webkit-transition: left 0.3s; }
+    #main.open {
+      left: -webkit-calc(100% - 72px);
+      left: calc(100% - 72px); }
+      #main.open #mask {
+        display: block; } }
+
+@media (min-width: 768px) {
+  .content {
+    font: 24px/36px Galaxie;
+    margin: 0 auto;
+    max-width: 968px;
+    padding: 60px 24px; }
+  .heading {
+    font: 120px/132px HUGEAvantGardeBold;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    max-width: 968px; }
+  .head-content {
+    position: relative; } }
 
 body {
-  background: #ec008c;
-  color: #fff;
-}
+  background: white;
+  margin: 0; }
 
-h1 {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  margin: 0;
-  font: 20vmin/1 HUGEAvantGardeBold;
-  letter-spacing: -0.06em;
-  text-align: center;
-}
+#page {
+  overflow-x: hidden;
+  width: 100%; }

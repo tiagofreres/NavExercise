@@ -1,0 +1,81 @@
+// Config
+
+$content_width: 968px;
+$content_padding: 60px;
+$mb_content_space: 50px;
+
+// Style
+#main {
+	position: relative;
+	z-index: $backLayer;
+	left: 0;
+}
+
+#mask {
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background-color: $cl_transBlack;
+	z-index: $topLayer;
+	// display: none;
+}
+
+.content {
+	color: black;
+	text-align: justify;
+}
+
+.headImg {
+	width: 100%;
+}
+
+@media (max-width: $mobile_max_width) {
+	.content {
+		font: $typ_bc_mb;
+		padding: 0 $normal_padding $mb_content_space;
+	}
+
+	.heading {
+		font: $typ_hl_mb;
+		margin: $mb_content_space $normal_padding;
+		text-align: left;
+	}
+
+	#main {
+		transition: left 0.3s;
+		-webkit-transition: left 0.3s;
+		&.open {
+			left: -webkit-calc(100% - #{3*$normal_padding});
+			left: calc(100% - #{3*$normal_padding});
+			#mask {
+				display: block;
+			}
+		}
+	}
+}
+
+@media (min-width: $mobile_width) {
+	.content {
+		font: $typ_bc_desk;
+		margin: 0 auto;
+		max-width: $content_width;
+		padding: $content_padding $normal_padding;
+	}
+
+	.heading {
+		font: $typ_hl_desk;
+		text-align: center;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		-webkit-transform: translate(-50%, -50%);
+		max-width: $content_width;
+	}
+
+	.head-content {
+		position: relative;
+	}
+}

@@ -1,0 +1,31 @@
+// Spaces
+$small_padding: 20px;
+$normal_padding: 24px;
+$doble_normal_padding: 2*24px;
+
+// Paths
+$img_relativePath: "/images";
+
+// Layers
+$backLayer: 1000;
+$midLayer: 2000;
+$topLayer: 3000;
+
+// Viewport
+$mobile_width: 768px;
+$mobile_max_width: 767px;
+
+// Reset
+ul, p, h1 {
+	padding: 0;
+	margin: 0;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+li {
+	list-style-type: none;
+}

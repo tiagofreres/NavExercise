@@ -1,0 +1,225 @@
+// Config
+$logo_width: 60px;
+$mb_logo_width: 50px;
+$menu_item_height: 48px;
+$cr_padding: 16px;
+
+// Styles
+#logo {
+	display: inline-block;
+}
+
+nav {
+	background-color: $cl_magenta;
+	color: white;
+	z-index: $topLayer;
+	position: relative;
+}
+
+#menu {
+	position: absolute;
+	margin: 0;
+}
+
+.primer-menu-item {
+	font: $typ_primNav;
+	&.open {
+		.sec-menu {
+			display: block;
+		}
+	}
+}
+
+.sec-menu-item {
+	font: $typ_secNav;
+	a:hover {
+		background-color: $cl_lightGray;
+		color: $cl_magenta;
+	}
+}
+
+.primer-menu-item, .sec-menu-item {
+	a {
+		display: block;
+		height: 100%;
+	}
+}
+
+.sec-menu {
+	display: none;
+}
+
+@media (max-width: $mobile_max_width) {
+	nav {
+		height: 3*$small_padding;
+	}
+
+	#overlap-nav, #access-nav {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 3*$small_padding;
+		width: 100%;
+	}
+
+	#overlap-nav {
+		background-color: $cl_magenta;
+		z-index: $midLayer;
+	}
+
+	#access-nav {
+		background-color: transparent;
+		z-index: $topLayer;
+		transition: left 0.3s;
+		-webkit-transition: left 0.3s;
+	}
+
+	#ext-nav {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+	}
+
+	#nav-toggle {
+		background: center center url("#{$img_relativePath}/toggle-open.svg");
+		width: $normal_padding;
+		height: $small_padding;
+		padding: $small_padding $normal_padding;
+		position: absolute;
+		right: 0;
+		top: 0;
+		z-index: $topLayer;
+	}
+
+	#logo {
+		background: center center no-repeat url("#{$img_relativePath}/HUGE-white-small-mb.png");
+		width: $mb_logo_width;
+		height: $small_padding;
+		padding: $small_padding $normal_padding;
+		z-index: $topLayer;
+		position: relative;
+	}
+
+	#menu {
+		right: 3*$normal_padding;
+		top: 0;
+		width: 100%;
+		height: 100vh;
+		min-height: 7*$menu_item_height;
+		z-index: $backLayer;
+		color: black;
+		transition: right 0.3s;
+		-webkit-transition: right 0.3s;
+		background-color: white;
+	}
+
+	.primer-menu-item {
+		padding-left: 3*$normal_padding;
+		position: relative;
+		&.open {
+			.chevron {
+				-webkit-transform:rotate(180deg);
+			}
+		}
+	}
+
+	.sec-menu-item, .primer-menu-item {
+		a {
+			padding-left: $normal_padding;
+			&:hover {
+				background-color: $cl_lightGray;
+				color: $cl_magenta;
+			}
+		}
+	} 
+
+	.primer-menu {
+		margin-top: 3*$small_padding;
+	}
+
+	.chevron {
+		background: center center url(#{$img_relativePath}/chevron.png);
+		width: $menu_item_height;
+		height: $menu_item_height;
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+
+	#copyright {
+		position: absolute;
+		bottom: 0;
+		font: $typ_cr_mb;
+		left: 3*$normal_padding;
+		padding: $cr_padding 0 $cr_padding $normal_padding;
+	}
+}
+
+@media (min-width: $mobile_width) {
+	#ext-nav {
+		background-color: $cl_magenta;
+		color: white;
+		height: 3*$normal_padding;
+	}
+
+	#logo {
+		background: center center no-repeat url("#{$img_relativePath}/HUGE-white-small.png");
+		width: $logo_width;
+		height: $normal_padding;
+		padding: $normal_padding;
+	}
+
+	.headImg {
+		height: 640px;
+	}
+
+	.heading {
+		position: absolute;
+		left: 0;
+		top: 0;
+		color: white;
+		width: 100%;
+	}
+
+	#copyright  {
+		display: none;
+	}
+
+	#menu {
+		left: $logo_width+3*$normal_padding;
+		top: 0;
+		background-color: transparent;
+		color: white;
+	}
+
+	.primer-menu-item {
+		display: inline-block;
+		margin-right: -4px;
+		> a {
+			padding: $normal_padding/2 $normal_padding;
+			display: inline-block;
+			&:hover {
+				background-color: white;
+				color: $cl_magenta;
+			}
+		}
+		&.open {
+			background-color: white;
+			color: $cl_magenta;
+			.sec-menu {
+				position: absolute;
+				background-color: inherit;
+				color: black;
+			}
+		}
+	}
+
+	.sec-menu-item {
+		display: block;
+		> a {
+			padding: 0 $normal_padding;	
+			display: block;
+		}
+	}
+
+}
