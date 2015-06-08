@@ -114,7 +114,7 @@ nav {
 		right: 100vw;
 		top: 0;
 		width: calc(100% - #{3*$normal_padding});
-		min-height: 7*$menu_item_height;
+		min-height: 100vh;
 		z-index: $backLayer;
 		color: black;
 		padding-bottom: 3*$menu_item_height;
