@@ -15,7 +15,7 @@ $mb_content_space: 50px;
 	position: absolute;
 	right: 0;
 	top: 0;
-	height: 100vh;
+	height: calc(100vh + #{3*$menu_item_height});
 	width: calc(200% - #{3*$normal_padding});
 	background-color: $cl_transBlack;
 	z-index: $topLayer;
