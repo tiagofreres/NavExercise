@@ -8,7 +8,7 @@
   <title>HUGE NavExercise</title>
   <link rel="stylesheet" href="/styles/main.css">
 </head>
-<body fullbleed>
+<body>
 	<div id="page">
 		<nav>
 			<div id="ext-nav">
@@ -18,36 +18,10 @@
 					<a id="nav-toggle" href="#"></a>
 				</div>
 				<div id="menu">
-					<ul class="primer-menu">
-						<li class="primer-menu-item">
-							<a href="#/work">Work</a>
-						</li>
-						<li class="primer-menu-item open">
-							<a href="#/about">About<i class="chevron"></i></a>
-							<ul class="sec-menu">
-								<li class="sec-menu-item">
-									<a href="#/work">About</a>
-								</li>
-								<li class="sec-menu-item">
-									<a href="#/work">About</a>
-								</li>
-								<li class="sec-menu-item">
-									<a href="#/work">UX & Product Design</a>
-								</li>
-							</ul>
-						</li>
-						<li class="primer-menu-item">
-							<a href="#/work">Careers</a>
-						</li>
-						<li class="primer-menu-item">
-							<a href="#/work">Ideas</a>
-						</li>
-					</ul>
-					<div id="copyright">©2014 Huge. All Rights Reserved.</div>
 				</div>
 			</div>
 		</nav>
-		<section id="main" class="open">
+		<section id="main">
 			<div id="mask"></div>
 			<div class="head-content">
 				<img class="headImg" src="/images/background-image.jpg">
@@ -61,5 +35,13 @@
 			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 		</section>
 	</div>
+	<script type="text/javascript" src="/js/main.min.js"></script>
+	<script type="text/template" id="item-tmpl">
+		<li class="{{:classname}}">
+			<a href="{{:url}}" onclick="HugeNav.toggleNav(this);">{{:label}}{{:chevron}}</a>{{:menu}}</li>
+	</script>
+	<script type="text/template" id="menu-tmpl">
+		<ul class="{{:classname}}">{{:list}}</ul>
+	</script>
 </body>
 </html>

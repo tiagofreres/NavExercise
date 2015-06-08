@@ -13,13 +13,16 @@ $mb_content_space: 50px;
 
 #mask {
 	position: absolute;
-	left: 0;
+	right: 0;
 	top: 0;
-	height: 100%;
-	width: 100%;
+	height: 100vh;
+	width: calc(200% - #{3*$normal_padding});
 	background-color: $cl_transBlack;
 	z-index: $topLayer;
-	// display: none;
+	display: none;
+	&.open {
+		display: block;
+	}
 }
 
 .content {
@@ -44,8 +47,8 @@ $mb_content_space: 50px;
 	}
 
 	#main {
-		transition: left 0.3s;
-		-webkit-transition: left 0.3s;
+		// transition: left 0.3s;
+		// -webkit-transition: left 0.3s;
 		&.open {
 			left: -webkit-calc(100% - #{3*$normal_padding});
 			left: calc(100% - #{3*$normal_padding});

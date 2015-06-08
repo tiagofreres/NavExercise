@@ -57,21 +57,26 @@ nav {
 	#overlap-nav, #access-nav {
 		position: absolute;
 		top: 0;
-		left: 0;
 		height: 3*$small_padding;
 		width: 100%;
 	}
 
 	#overlap-nav {
+		right: 0;
 		background-color: $cl_magenta;
 		z-index: $midLayer;
 	}
 
 	#access-nav {
+		right: -webkit-calc(100% - #{3*$normal_padding});
+		right: calc(100% - #{3*$normal_padding});
 		background-color: transparent;
 		z-index: $topLayer;
-		transition: left 0.3s;
-		-webkit-transition: left 0.3s;
+		transition: right 0.3s;
+		-webkit-transition: right 0.3s;
+		&.open {
+			right: 0;
+		}
 	}
 
 	#ext-nav {
@@ -89,6 +94,9 @@ nav {
 		right: 0;
 		top: 0;
 		z-index: $topLayer;
+		&.open {
+			background-image: url("#{$img_relativePath}/toggle-close.svg");
+		}
 	}
 
 	#logo {
@@ -101,20 +109,23 @@ nav {
 	}
 
 	#menu {
-		right: 3*$normal_padding;
+		&.open {
+			right: 3*$normal_padding;	
+		}
+		right: 100vw;
 		top: 0;
-		width: 100%;
-		height: 100vh;
+		width: calc(100% - #{3*$normal_padding});
 		min-height: 7*$menu_item_height;
 		z-index: $backLayer;
 		color: black;
-		transition: right 0.3s;
-		-webkit-transition: right 0.3s;
+		padding-bottom: 3*$menu_item_height;
+		// transition: right 0.3s;
+		// -webkit-transition: right 0.3s;
 		background-color: white;
 	}
 
 	.primer-menu-item {
-		padding-left: 3*$normal_padding;
+		// padding-left: 3*$normal_padding;
 		position: relative;
 		&.open {
 			.chevron {
@@ -150,7 +161,7 @@ nav {
 		position: absolute;
 		bottom: 0;
 		font: $typ_cr_mb;
-		left: 3*$normal_padding;
+		left: 0;
 		padding: $cr_padding 0 $cr_padding $normal_padding;
 	}
 }
@@ -221,5 +232,10 @@ nav {
 			display: block;
 		}
 	}
+}
 
+@media (min-width: $mobile_width) and (max-width: $desk_full) {
+	.primer-menu-item, .sec-menu-item {
+		font-size: 12px;
+	}
 }
