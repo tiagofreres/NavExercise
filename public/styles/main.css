@@ -103,7 +103,7 @@ nav {
     right: 100vw;
     top: 0;
     width: calc(100% - 72px);
-    min-height: 100vh;
+    min-height: calc(100vh - 144px);
     z-index: 1000;
     color: black;
     padding-bottom: 144px;
