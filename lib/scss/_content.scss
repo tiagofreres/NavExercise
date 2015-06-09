@@ -47,8 +47,6 @@ $mb_content_space: 50px;
 	}
 
 	.main-content {
-		// transition: left 0.3s;
-		// -webkit-transition: left 0.3s;
 		&.open {
 			left: -webkit-calc(100% - #{3*$normal_padding});
 			left: calc(100% - #{3*$normal_padding});
